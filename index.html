@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkinCareBuddy ✨</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="logo">
+                    <i class="fas fa-spa"></i>
+                    SkinCareBuddy
+                </h1>
+                <div class="streak-counter">
+                    <i class="fas fa-fire"></i>
+                    <span id="streak">0</span> day streak
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Today's Routine Section -->
+            <section class="routine-section">
+                <h2 class="section-title">
+                    <i class="fas fa-calendar-day"></i>
+                    Today's Routine
+                </h2>
+                <div class="routine-grid" id="routineGrid">
+                    <!-- Routine items will be added here -->
+                </div>
+                <button class="add-step-btn" id="addStepBtn">
+                    <i class="fas fa-plus"></i>
+                    Add Step
+                </button>
+            </section>
+
+            <!-- Progress Photos -->
+            <section class="progress-section">
+                <h2 class="section-title">
+                    <i class="fas fa-camera"></i>
+                    Progress Photos
+                </h2>
+                <div class="photo-upload">
+                    <div class="upload-area" id="uploadArea">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p>Click to upload today's photo</p>
+                        <input type="file" id="photoInput" accept="image/*" hidden>
+                    </div>
+                </div>
+                <div class="photo-gallery" id="photoGallery">
+                    <!-- Photos will be displayed here -->
+                </div>
+            </section>
+
+            <!-- Product Management -->
+            <section class="products-section">
+                <h2 class="section-title">
+                    <i class="fas fa-pump-soap"></i>
+                    My Products
+                </h2>
+                <div class="products-grid" id="productsGrid">
+                    <!-- Products will be added here -->
+                </div>
+                <button class="add-product-btn" id="addProductBtn">
+                    <i class="fas fa-plus"></i>
+                    Add Product
+                </button>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modals -->
+    <div class="modal" id="stepModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Add Routine Step</h3>
+            <form id="stepForm">
+                <div class="form-group">
+                    <label for="stepName">Step Name</label>
+                    <input type="text" id="stepName" required>
+                </div>
+                <div class="form-group">
+                    <label for="stepTime">Time of Day</label>
+                    <select id="stepTime" required>
+                        <option value="morning">Morning</option>
+                        <option value="evening">Evening</option>
+                        <option value="both">Both</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="stepProduct">Product (optional)</label>
+                    <input type="text" id="stepProduct">
+                </div>
+                <button type="submit" class="submit-btn">Add Step</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="productModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Add Product</h3>
+            <form id="productForm">
+                <div class="form-group">
+                    <label for="productName">Product Name</label>
+                    <input type="text" id="productName" required>
+                </div>
+                <div class="form-group">
+                    <label for="productType">Product Type</label>
+                    <select id="productType" required>
+                        <option value="cleanser">Cleanser</option>
+                        <option value="toner">Toner</option>
+                        <option value="serum">Serum</option>
+                        <option value="moisturizer">Moisturizer</option>
+                        <option value="sunscreen">Sunscreen</option>
+                        <option value="mask">Mask</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="productExpiry">Expiry Date (optional)</label>
+                    <input type="date" id="productExpiry">
+                </div>
+                <button type="submit" class="submit-btn">Add Product</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
